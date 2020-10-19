@@ -2,3 +2,4 @@
 .idea/
 .coverage
 .env
+db.sqlite3
