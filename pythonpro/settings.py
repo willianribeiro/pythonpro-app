@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'collectfast',
     'django.contrib.staticfiles',
 ]
 
@@ -125,6 +126,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
+COLLECTFAST_ENABLED = False
 
 if AWS_ACCESS_KEY_ID:
     # Configurações do AWS S3
@@ -137,6 +139,8 @@ if AWS_ACCESS_KEY_ID:
     AWS_QUERYSTRING_AUTH = True                                     # Para gerar urls assinadas
     AWS_S3_CUSTOM_DOMAIN = None                                     # vamos utilizar o próprio domínio do s3
     AWS_DEFAULT_ACL = 'private'                                     # para que os arquivos não fiquem públicos
+
+    COLLECTFAST_ENABLED = True
 
     # Static Assets
     # ------------------------------------------------------------------------------
