@@ -148,7 +148,8 @@ if AWS_ACCESS_KEY_ID:
 
     # Static Assets
     # ------------------------------------------------------------------------------
-    STATICFILES_STORAGE = 's3_folder_storage.s3.StaticStorage'      # é uma classe da biblioteca django-s3-folder-storage que fará a gestão do static storage
+    # é uma classe da biblioteca django-s3-folder-storage que fará a gestão do static storage
+    STATICFILES_STORAGE = 's3_folder_storage.s3.StaticStorage'
     STATIC_S3_PATH = 'static'
     STATIC_ROOT = f'/{STATIC_S3_PATH}/'
     STATIC_URL = f'//s3.amazonaws.com/{AWS_STORAGE_BUCKET_NAME}/{STATIC_S3_PATH}/'
